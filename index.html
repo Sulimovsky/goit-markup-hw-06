@@ -87,7 +87,7 @@
                     </label>
 
                     <label class="form-field">
-                        <input type="tel" class="form-input" name="user-tel" pattern="[0-9]{10}" required>
+                        <input type="tel" class="form-input" name="user-tel" min="10" pattern="[0-9]{10}" required>
                         <span class="form-label">Телефон</span>
                         <svg class="form-icon">
                             <use href="./img/sprite.svg#icon-phone-disabled"></use>
@@ -109,7 +109,7 @@
 
                     <div class="policy-box">
                         <label class="check-field">
-                            <input type="checkbox" class="checkbox visually-hidden">
+                            <input type="checkbox" class="checkbox visually-hidden" required>
                             <span class="check-icon"></span>
                             <span class="check-label">Соглашаюсь с рассылкой и принимаю</span>
                         </label>
@@ -416,6 +416,19 @@
                 </svg>
             </a></li>
         </ul>
+    </div>
+
+    <div class="form-container">
+        <p>Подпишитесь на рассылку</p>
+        <form class="footer-form">
+            <input type="email" class="footer-input" name="user-mail" placeholder="E-mail">
+            <button type="submit" class="send-btn">
+            Подписаться
+            <svg class="send-icon">
+                <use href="./img/sprite.svg#icon-send"></use>
+            </svg>
+            </button>
+        </form>
     </div>
 
     </div>
