@@ -70,19 +70,24 @@
 
         <div class="backdrop is-hidden" data-modal>
             <div class="modal">
-                <button aria-label="Закрыть" class="btn-closed" data-modal-close></button>
+                <button aria-label="Закрыть" class="btn-closed" data-modal-close>
+                    <svg class="btn-closed-icon">
+                        <use href="./img/sprite.svg#icon-close-btn"></use>
+                    </svg>
+                </button>
+
                 <p class="form-overhead">Оставьте свои данные, мы вам перезвоним</p>
                 <form class="form">
                     <label class="form-field">
-                        <input type="text" class="form-input" name="user-name">
+                        <input type="text" class="form-input" name="user-name" required> 
                         <span class="form-label">Имя</span>
-                            <svg class="form-icon">
-                                <use href="./img/sprite.svg#icon-person-disabled"></use>
-                            </svg>            
+                        <svg class="form-icon">
+                            <use href="./img/sprite.svg#icon-person-disabled"></use>
+                        </svg>           
                     </label>
 
                     <label class="form-field">
-                        <input type="tel" class="form-input" name="user-tel">
+                        <input type="tel" class="form-input" name="user-tel" pattern="[0-9]{10}" required>
                         <span class="form-label">Телефон</span>
                         <svg class="form-icon">
                             <use href="./img/sprite.svg#icon-phone-disabled"></use>
@@ -90,7 +95,7 @@
                     </label>
 
                     <label class="form-field">
-                        <input type="email" class="form-input" name="user-mail">
+                        <input type="email" class="form-input" name="user-mail" required autocomplete="on">
                         <span class="form-label">Почта</span>
                         <svg class="form-icon">
                             <use href="./img/sprite.svg#icon-mail-disabled"></use>
@@ -102,10 +107,13 @@
                         <span class="form-label">Комментарий</span>
                     </label>
 
-                    <div class="check-field">
-                        <input type="checkbox" class="checkbox visually-hidden" id="checkbox">
-                        <label for="checkbox" class="check-label">Соглашаюсь с рассылкой и принимаю</label>
-                        <a class="policy">Условия договора</a>
+                    <div class="policy-box">
+                        <label class="check-field">
+                            <input type="checkbox" class="checkbox visually-hidden">
+                            <span class="check-icon"></span>
+                            <span class="check-label">Соглашаюсь с рассылкой и принимаю</span>
+                        </label>
+                        <a href="" class="policy" target="_blank" rel="noopener noreferer">Условия договора</a>
                     </div>
 
                     <button type="submit" class="form-btn">Отправить</button>

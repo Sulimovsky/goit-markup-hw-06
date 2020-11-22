@@ -313,6 +313,7 @@ h1 {
     justify-content: center;
     align-items: center;
     margin-left: auto;
+    padding: 6px 6px;
     width: 30px;
     height: 30px;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -323,18 +324,17 @@ h1 {
     cursor: pointer;
 }
 
-.btn-closed::after {
-    content: "";
+.btn-closed-icon {
+    width: 18px;
+    height: 18px;
 
-    display: inline-block;
-    width: 11px;
-    height: 11px;
-    padding: 9px 10px;
+    fill: #000000;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-    background-image: url(../img/close.svg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
+.btn-closed:hover .btn-closed-icon,
+.btn-closed:focus .btn-closed-icon {
+    fill: var(--backlight-color);
 }
 
 .form-overhead {
@@ -359,6 +359,8 @@ h1 {
 .form-field {
     width: 448px;
     position: relative;
+
+    cursor: pointer;
 }
 
 .form-field:nth-child(-n + 3) {
@@ -377,6 +379,16 @@ h1 {
     letter-spacing: 0.01em;
 
     color: var(--primary-text-color);
+
+    outline: none;
+}
+
+.form-input:focus {
+    border-color: var(--backlight-color);
+}
+
+.form-input:focus ~ .form-icon {
+    fill: var(--backlight-color);
 }
 
 .form-label {
@@ -420,6 +432,11 @@ h1 {
     color: var(--primary-text-color);
 
     resize: none;
+    outline: none;
+}
+
+.text-message:focus {
+    border-color: var(--backlight-color);
 }
 
 .text-message::placeholder {
@@ -431,18 +448,39 @@ h1 {
     color: rgba(117, 117, 117, 0.5);
 }
 
-.check-field {
+.policy-box {
     margin-bottom: 30px;
 }
 
+.check-field {
+    position: relative;
+    cursor: pointer;
+}
+
+.checkbox:checked + .check-icon {
+    background-image: url(../img/checkbox/icon-check.svg), url(../img/checkbox/chek-enabled.svg);
+}
+
+.check-icon {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 15px;
+
+    background-image: url(../img/checkbox/chek-disabled.svg);
+}
+
 .check-label {
+    padding-left: 24px;
+
     font-weight: 400;
     font-size: 14px;
     line-height: 1.71;
 
     color: var(--primary-text-color);
 }
-
 
 .policy {
     font-weight: 400;
@@ -471,6 +509,8 @@ h1 {
     border-radius: 4px;
     border-color: var(--backlight-color);
     border-style: solid;
+
+    cursor: pointer;
 }
 
 /* Quality */
